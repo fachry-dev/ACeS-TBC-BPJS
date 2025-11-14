@@ -63,10 +63,10 @@
                 <p class="text-lg font-semibold text-gray-800">15.30 – 20.30</p>
             </div>
             
-            <a href="{{ route('booking.index') }}" 
+            {{-- <a href="{{ route('booking.index') }}" 
                class="w-full lg:w-auto text-center bg-brand-green text-white px-6 py-3 rounded-lg font-medium text-lg hover:bg-brand-green-dark transition duration-300 md:col-span-3 lg:col-span-1">
                 Booking Sekarang
-            </a>
+            </a> --}}
 
         </div>
     </div>

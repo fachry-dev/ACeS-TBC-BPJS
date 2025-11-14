@@ -33,6 +33,15 @@
                             <span class="block sm:inline">{{ $message }}</span>
                         </div>
                     @enderror
+                    @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
                     <div class="space-y-4">
                         <div>
@@ -60,6 +69,16 @@
                 <form id="form-register" action="{{ route('register.store') }}" method="POST" class="hidden">
                     @csrf 
                     <div class="space-y-4">
+
+                        @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
                         <div>
                             <label for="register-name" class="block text-sm font-medium text-gray-300 mb-1">Nama Lengkap</label>
                             <input type="text" id="register-name" name="name" value="{{ old('name') }}" required
@@ -78,8 +97,8 @@
                         </div>
                     
 <div>
-    <label for="register-confirm-password" class="block text-sm font-medium text-gray-300 mb-1">Konfirmasi Password</label>
-    <input type="password" id="register-confirm-password" name="password_confirmation" required
+    <label for="password" class="block text-sm font-medium text-gray-300 mb-1"> Password</label>
+    <input type="password" id="password" name="password" required
         class="w-full px-4 py-2 bg-brand-dark border border-gray-600 rounded-lg text-gray-100 focus:outline-none focus:ring-2 focus:ring-brand-green">
 </div>
 

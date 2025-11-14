@@ -97,8 +97,6 @@
     </div>
 @endsection
 
-{{-- resources/views/patient/profile.blade.php --}}
-...
 @push('scripts')
     <script>
         // SALIN SEMUA KODE DARI 'public/js/profile.js' KE SINI
@@ -112,21 +110,21 @@
 
     if (tabRegister && tabLogin && formLogin && formRegister) {
         
-        // Saat Tab Register di-klik
+        
         tabRegister.addEventListener('click', () => {
-            formRegister.classList.remove('hidden'); // Tampilkan form register
-            formLogin.classList.add('hidden'); // Sembunyikan form login
-            
-            // Atur style tab aktif (Register)
+            formRegister.classList.remove('hidden'); 
+            formLogin.classList.add('hidden'); 
+
+           
             tabRegister.classList.add('bg-brand-green', 'text-white');
             tabRegister.classList.remove('text-gray-400');
             
-            // Atur style tab non-aktif (Login)
+            
             tabLogin.classList.remove('bg-brand-green', 'text-white');
             tabLogin.classList.add('text-gray-400');
         });
 
-        // Saat Tab Login di-klik
+        
         tabLogin.addEventListener('click', () => {
             formLogin.classList.remove('hidden'); // Tampilkan form login
             formRegister.classList.add('hidden'); // Sembunyikan form register
