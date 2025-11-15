@@ -1,17 +1,19 @@
 <?php
+
 namespace App\Http\Controllers\Doctor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class DoctorDashboardController extends Controller
-{   
+{
+
     public function index()
     {
-         // Data dummy untuk 'Dashboard Antrian' (kode Anda yang lama)
-        $prioritasTinggi = [ /* ... data dummy Anda ... */ ];
-        $prioritasSedang = [ /* ... data dummy Anda ... */ ];
-        $prioritasRendah = [ /* ... data dummy Anda ... */ ];
+        // Data dummy untuk 'Dashboard Antrian' (kode Anda yang lama)
+        $prioritasTinggi = [ /* ... data dummy Anda ... */];
+        $prioritasSedang = [ /* ... data dummy Anda ... */];
+        $prioritasRendah = [ /* ... data dummy Anda ... */];
 
         return view('doctor.dashboard', compact(
             'prioritasTinggi',
@@ -64,33 +66,8 @@ class DoctorDashboardController extends Controller
             'prioritasRendah'
         ));
     }
-
     public function konsultasiBaru()
     {
-        // Mengarahkan ke file view:
-        // resources/views/doctor/konsultasi_baru.blade.php
         return view('doctor.konsultasi_baru');
-    }
-
-    /**
-     * Menerima dan memproses data dari Form SOAP (Fitur 4)
-     */
-    public function simpanKonsultasi(Request $request)
-    {
-        // Ini adalah langkah terakhir: Menerima data yang sudah diedit dokter.
-        // Kita tidak memvalidasi terlalu ketat karena dokter yang menginput.
-        
-        $validatedData = $request->all();
-
-        // Untuk sekarang, kita 'dump and die'
-        // Ini akan menampilkan semua data yang dikirim dari form SOAP
-        // untuk membuktikan bahwa data yang diedit dokter berhasil disimpan.
-        
-        // dd = Dump and Die
-        dd($validatedData); 
-
-        // Di aplikasi nyata, Anda akan menyimpan ini ke database:
-        // Konsultasi::create($validatedData);
-        // return redirect()->route('doctor.dashboard')->with('success', 'Rekam medis berhasil disimpan.');
     }
 }

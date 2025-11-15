@@ -60,7 +60,7 @@
             </div>
             <div>
                 <label class="block text-sm font-medium text-gray-500 mb-1">Jam Praktek</label>
-                <p class="text-lg font-semibold text-gray-800">15.30 – 20.30</p>
+                <p class="text-lg font-semibold text-gray-800">15.30 - 20.30</p>
             </div>
             
             {{-- <a href="{{ route('booking.index') }}" 

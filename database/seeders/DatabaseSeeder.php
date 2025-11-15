@@ -19,10 +19,16 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'pasien',
             'email' => 'pasien@example.com',
-            'password' => Hash::make('pasienpassword'), // Pastikan menggunakan enkripsi password
+            'password' => Hash::make('12345678'), // Pastikan menggunakan enkripsi password
             'role' => 'pasien',
             'tinggi_badan' => 170,  // Contoh tinggi badan
             'berat_badan' => 70,    // Contoh berat badan
-]);
+        ]);
+        User::create([
+            'name' => 'dokter',
+            'email' => 'dokter@example.com',
+            'password' => Hash::make('password'), // Pastikan menggunakan enkripsi password
+            'role' => 'dokter',
+        ]);
     }
 }

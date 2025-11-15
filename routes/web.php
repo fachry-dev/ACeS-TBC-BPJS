@@ -51,15 +51,11 @@ Route::middleware('auth')->group(function () {
         ->name('profile.updatePassword');
 });
 
-Route::middleware(['auth', 'CheckRole:dokter'])
-    ->prefix('doctor')
-    ->name('doctor.')
-    ->group(function () {
+Route::get('/doctor/dashboard', [DoctorDashboardController::class, 'index'])
+    ->name('doctor.dashboard');
+// Route::get('/doctor/dashboard', [DoctorDashboardController::class, 'index'])
+//      ->name('doctor.dashboard');
 
-    Route::get('/dashboard', [DoctorDashboardController::class, 'index'])
-        ->name('dashboard');
-
-});
 
 // Route::middleware(['auth', 'CheckRole:dokter'])
 //      ->prefix('doctor') // URL akan jadi /doctor/...
@@ -72,3 +68,6 @@ Route::middleware(['auth', 'CheckRole:dokter'])
     
 
 // });
+
+Route::get('dokter/konsultasi_baru', [DoctorDashboardController::class, 'konsultasiBaru'])
+    ->name('doctor.konsultasi_baru');
